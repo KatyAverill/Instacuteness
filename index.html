@@ -34,12 +34,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Project name</a>
+          <a class="brand" href="#">Instacuteness!</a>
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
-            <ul class="nav">
+              <form class="form-search">
+                <div class="input-append pull-right">
+                  <input type="text" class="span2 search-query" placeholder="Tag Search...">
+                  <button type="submit" class="btn">Fetch!</button>
+                </div>
+              </form>
+            <ul class="nav words">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -49,25 +52,33 @@
       </div>
     </div>
 
+<br><br><br><br><br>
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Choose your Pet</li>
+              <li class="nav-header">Choose your Pet:</li><br>
               <!--fix me please and me above! <li class="active"><a href="#">Link</a></li> -->
-              <li><a href="javascript:variable_in_link('puppy')">Puppy</a></li>
-              <li><a href="javascript:variable_in_link('kitten')">Kitten</a></li>
+              <li><a href="#pets">All Pets</a></li>
+              <li><a href="#puppy">Puppy</a></li>
+              <li><a href="#kitten">Kitten</a></li>
+              <li><a href="#bunny">Bunny</a></li>
+              <li><a href="#horse">Horse</a></li>
+              <li><a href="#bird">Bird</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
           <div class="hero-unit">
             <h1>Petstagram!</h1>
+            <br><br>
             <hr>
                 <div id="instafeed"></div>
                
           </div>
-
+<footer>
+  Created by <a href="mailto:katy@crynix.com">Katy Marques</a>
+</footer>
     </body>
 </html>

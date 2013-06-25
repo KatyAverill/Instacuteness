@@ -40,6 +40,10 @@
           box-sizing: border-box;
 }
 
+h1 {
+  text-align: center;
+}
+
 article,
 aside,
 details,
@@ -69,6 +73,11 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 a:focus {
@@ -1025,7 +1034,8 @@ pre code {
 }
 
 form {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
+  padding-top: 15px;
 }
 
 fieldset {
@@ -1828,7 +1838,7 @@ input.search-query {
   padding-left: 14px;
   padding-left: 4px \9;
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
-
+  margin-top: 5px;
   margin-bottom: 0;
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
@@ -3973,9 +3983,9 @@ input[type="submit"].btn.btn-mini {
 .nav-header {
   display: block;
   padding: 3px 15px;
-  font-size: 11px;
+  font-size: 20px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 14px;
   color: #999999;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
@@ -4414,9 +4424,9 @@ input[type="submit"].btn.btn-mini {
 .navbar .brand {
   display: block;
   float: left;
-  padding: 10px 20px 10px;
+  padding: 23px 20px 20px;
   margin-left: -20px;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 200;
   color: #777777;
   text-shadow: 0 1px 0 #ffffff;
@@ -4459,7 +4469,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .input-append .btn,
 .navbar .input-prepend .btn-group,
 .navbar .input-append .btn-group {
-  margin-top: 0;
+  margin-top: 5px;
 }
 
 .navbar-form {
@@ -4529,7 +4539,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-static-top {
-  position: static;
+  position: static;.
   margin-bottom: 0;
 }
 
@@ -4561,6 +4571,8 @@ input[type="submit"].btn.btn-mini {
 .navbar-fixed-bottom .navbar-inner {
   padding-right: 0;
   padding-left: 0;
+  padding-top: 5px;
+  padding-bottom: 10px;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
@@ -4612,7 +4624,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar .nav > li > a {
   float: none;
-  padding: 10px 15px 10px;
+  padding: 0px 20px 12px;
   color: #777777;
   text-decoration: none;
   text-shadow: 0 1px 0 #ffffff;
