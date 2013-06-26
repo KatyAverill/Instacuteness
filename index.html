@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <title>Instacuteness!</title>
         
         <meta charset="utf-8" />
@@ -10,9 +11,12 @@
         <meta name="format-detection" content="telephone=no"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script type="text/javascript" src="Scripts/instafeed.min.js"></script>
-        <script type="text/javascript" src="Scripts/js/bootstrap.js"></script>
+        <script type="text/javascript" src="Scripts/bootstrap.js"></script>
         <script type="text/javascript" src="Scripts/jquery.js"></script>
-        <link href="Scripts/bootstrap.css" rel="stylesheet">
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "89f7b970-79bd-4593-9cc8-3891638aa0d0", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+        <link href="Stylesheets/bootstrap.css" rel="stylesheet">
 
             <script type="text/javascript">
             function getUrlVars() {
@@ -48,9 +52,9 @@
                     get: 'tagged',
                     tagName: (first),
                     clientId: '3d0a5cba5a524ff7bf81d100c382ab40',
-                    template: '<a href="{{link}}"><img src="{{image}}" />{{likes}}</a>',
+                    template: '<a href="{{link}}"><img src="{{image}}" /></a>',
                     resolution: 'low_resolution',
-                    limit: '20'
+                    limit: '60'
                 });
                 feed.run();
             </script>
@@ -63,18 +67,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Instacuteness!</a>
+          <a class="brand" href="index.html?id=pets">Instacuteness!</a>
           <div class="nav-collapse collapse">
               <form name="input" class="form-search" action="">
                 <div class="input-append pull-right">
-                  <input type="text" class="span2 search-query" name="id" value="" onchange="goToPage(this.value)"placeholder="Tag Search...">
+                  <input type="text" class="span2 search-query" name="id" value="" onchange="goToPage(this.value)"placeholder="Search...">
                   <button type="submit" class="btn" value="Submit">Fetch!</button>
                 </div>
               </form>
             <ul class="nav words">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="active"><a href="index.html?id=pets">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="mailto:katy@crynix.com">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -87,20 +91,44 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Choose your Pet:</li><br>
+              <li class="nav-header">Choose your Tag:</li><br>
               <li><a href="index.html?id=pets">All Pets</a></li>
               <li><a href="index.html?id=puppy">Puppy</a></li>
               <li><a href="index.html?id=kitten">Kitten</a></li>
               <li><a href="index.html?id=bunny">Bunny</a></li>
               <li><a href="index.html?id=horse">Horse</a></li>
-              <li><a href="index.html?id=bird">Bird</a></li>
+              <li><a href="index.html?id=parrot">Parrot</a></li>
+              <li><a href="index.html?id=giraffe">Giraffe</a></li>
+              <li><a href="index.html?id=kangaroo">Kangaroo</a></li>
+              <li><a href="index.html?id=koala">Koala</a></li>
+              <li><a href="index.html?id=panda">Panda</a></li>
+              <li><a href="index.html?id=lion">Lion</a></li>
+              <li><a href="index.html?id=tiger">Tiger</a></li>
+              <li><a href="index.html?id=bear">Bear</a></li>
+              <li><a href="index.html?id=elephant">Elephant</a></li>
+              <li><a href="index.html?id=hippo">Hippo</a></li>
+              <li><a href="index.html?id=zebra">Zebra</a></li>
+              <li><a href="index.html?id=fox">Fox</a></li>
+              <li><a href="index.html?id=cow">Cow</a></li>
+              <li><a href="index.html?id=owl">Owl</a></li>
+              <li><a href="index.html?id=deer">Deer</a></li>
+              <li><a href="index.html?id=penguin">Penguin</a></li>
+              <li><a href="index.html?id=clownfish">Clownfish</a></li>
             </ul>
+            <hr>
+            <span class='st_facebook_large' displayText='Facebook'></span>
+            <span class='st_twitter_large' displayText='Tweet'></span>
+            <span class='st_pinterest_large' displayText='Pinterest'></span>
+            <span class='st_googleplus_large' displayText='Google +'></span>
+            <span class='st_reddit_large' displayText='Reddit'></span>
+            <span class='st_tumblr_large' displayText='Tumblr'></span>
+            <span class='st_email_large' displayText='Email'></span>
           </div>
         </div>
         <div class="span9">
           <div class="hero-unit">
-            <h1>Petstagram!</h1>
-            <br><br>
+            <h1>Instacuteness!</h1>
+            <br>
             <hr>
                 <div id="instafeed"></div>
           </div>
@@ -108,4 +136,20 @@
   Created by <a href="mailto:katy@crynix.com">Katy Marques</a>
 </footer>
     </body>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-42028707-1']);
+  _gaq.push(['_setDomainName', 'instacuteness.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 </html>
