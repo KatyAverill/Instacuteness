@@ -15,11 +15,24 @@
         <link href="Scripts/bootstrap.css" rel="stylesheet">
 
             <script type="text/javascript">
+            function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+                }
+            </script>
+            <script type="text/javascript">
+             var first = getUrlVars()["id"];
+            </script>
+
+            <script type="text/javascript">
                 var feed = new Instafeed({
                     get: 'tagged',
-                    tagName: 'puppy',
+                    tagName: (first),
                     clientId: '3d0a5cba5a524ff7bf81d100c382ab40',
-                    template: '<a href="{{link}}"><img src="{{image}}" /></a>',
+                    template: '<a href="{{link}}"><img src="{{image}}" />{{likes}}</a>',
                     resolution: 'low_resolution',
                     limit: '20'
                 });
@@ -36,10 +49,10 @@
           </button>
           <a class="brand" href="#">Instacuteness!</a>
           <div class="nav-collapse collapse">
-              <form class="form-search">
+              <form name="input" class="form-search" action="index.html" method="GET">
                 <div class="input-append pull-right">
-                  <input type="text" class="span2 search-query" placeholder="Tag Search...">
-                  <button type="submit" class="btn">Fetch!</button>
+                  <input type="text" class="span2 search-query" name="index.html?" placeholder="Tag Search...">
+                  <button type="submit" class="btn" value="Submit">Fetch!</button>
                 </div>
               </form>
             <ul class="nav words">
@@ -59,13 +72,12 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Choose your Pet:</li><br>
-              <!--fix me please and me above! <li class="active"><a href="#">Link</a></li> -->
-              <li><a href="#pets">All Pets</a></li>
-              <li><a href="#puppy">Puppy</a></li>
-              <li><a href="#kitten">Kitten</a></li>
-              <li><a href="#bunny">Bunny</a></li>
-              <li><a href="#horse">Horse</a></li>
-              <li><a href="#bird">Bird</a></li>
+              <li><a href="index.html?id=pets">All Pets</a></li>
+              <li><a href="index.html?id=puppy">Puppy</a></li>
+              <li><a href="index.html?id=kitten">Kitten</a></li>
+              <li><a href="index.html?id=bunny">Bunny</a></li>
+              <li><a href="index.html?id=horse">Horse</a></li>
+              <li><a href="index.html?id=bird">Bird</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
