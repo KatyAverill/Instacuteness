@@ -57,6 +57,10 @@ section {
   display: block;
 }
 
+img {
+  margin: 5px;
+}
+
 audio,
 canvas,
 video {
@@ -105,15 +109,6 @@ sup {
 
 sub {
   bottom: -0.25em;
-}
-
-img {
-  width: auto\9;
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
-  border: 0;
-  -ms-interpolation-mode: bicubic;
 }
 
 #map_canvas img,
@@ -6131,11 +6126,12 @@ a.badge:focus {
 
 .hero-unit {
   padding: 60px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
   color: inherit;
+  text-align: center;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
@@ -6144,7 +6140,6 @@ a.badge:focus {
 
 .hero-unit h1 {
   margin-bottom: 0;
-  font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
   color: inherit;
