@@ -25,10 +25,24 @@
             </script>
             <script type="text/javascript">
              var first = getUrlVars()["id"];
-             if (first="undefined"){
-              first="pets";
-             }
+
+             //if (first="undefined"){
+              //second="pets";
+             //} else {
+              //second = getUrlVars()["id"];
+            //}
+
             </script>
+
+              <script type="javascript">
+                function goToPage(var url = '')
+                {
+                    var initial = "http://www.domain.com";
+                    var extension = "html";
+
+                    window.location(initial+url+extension);
+                }
+                </script>
             <script type="text/javascript">
                 var feed = new Instafeed({
                     get: 'tagged',
@@ -51,9 +65,9 @@
           </button>
           <a class="brand" href="#">Instacuteness!</a>
           <div class="nav-collapse collapse">
-              <form name="input" class="form-search" action="index.html" method="GET">
+              <form name="input" class="form-search" action="">
                 <div class="input-append pull-right">
-                  <input type="text" class="span2 search-query" name="index.html?" placeholder="Tag Search...">
+                  <input type="text" class="span2 search-query" name="id" value="" onchange="goToPage(this.value)"placeholder="Tag Search...">
                   <button type="submit" class="btn" value="Submit">Fetch!</button>
                 </div>
               </form>
