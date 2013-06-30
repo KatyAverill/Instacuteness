@@ -7538,62 +7538,62 @@ function ajaxExtend( target, src ) {
 	return target;
 }
 
-jQuery.fn.load = function( url, params, callback ) {
-	if ( typeof url !== "string" && _load ) {
-		return _load.apply( this, arguments );
-	}
+//jQuery.fn.load = function( url, params, callback ) {
+//	if ( typeof url !== "string" && _load ) {
+//		return _load.apply( this, arguments );
+//	}
 
-	var selector, response, type,
-		self = this,
-		off = url.indexOf(" ");
-
-	if ( off >= 0 ) {
-		selector = url.slice( off, url.length );
-		url = url.slice( 0, off );
-	}
-
+//	var selector, response, type,
+//		self = this,
+//		off = url.indexOf(" ");
+//
+//	if ( off >= 0 ) {
+//		selector = url.slice( off, url.length );
+//		url = url.slice( 0, off );
+//	}
+//
 	// If it's a function
-	if ( jQuery.isFunction( params ) ) {
+//	if ( jQuery.isFunction( params ) ) {
 
 		// We assume that it's the callback
-		callback = params;
-		params = undefined;
+//		callback = params;
+//		params = undefined;
 
 	// Otherwise, build a param string
-	} else if ( params && typeof params === "object" ) {
-		type = "POST";
-	}
+//	} else if ( params && typeof params === "object" ) {
+//		type = "POST";
+//	}
 
 	// If we have elements to modify, make the request
-	if ( self.length > 0 ) {
-		jQuery.ajax({
-			url: url,
+//	if ( self.length > 0 ) {
+//		jQuery.ajax({
+//			url: url,
 
 			// if "type" variable is undefined, then "GET" method will be used
-			type: type,
-			dataType: "html",
-			data: params
-		}).done(function( responseText ) {
+//			type: type,
+//			dataType: "html",
+//			data: params
+//		}).done(function( responseText ) {
 
 			// Save response for use in complete callback
-			response = arguments;
+//			response = arguments;
 
-			self.html( selector ?
+//			self.html( selector ?
 
 				// If a selector was specified, locate the right elements in a dummy div
 				// Exclude scripts to avoid IE 'Permission Denied' errors
-				jQuery("<div>").append( jQuery.parseHTML( responseText ) ).find( selector ) :
+//				jQuery("<div>").append( jQuery.parseHTML( responseText ) ).find( selector ) :
 
 				// Otherwise use the full result
-				responseText );
+//				responseText );
 
-		}).complete( callback && function( jqXHR, status ) {
-			self.each( callback, response || [ jqXHR.responseText, status, jqXHR ] );
-		});
-	}
+//		}).complete( callback && function( jqXHR, status ) {
+//			self.each( callback, response || [ jqXHR.responseText, status, jqXHR ] );
+//		});
+//	}
 
-	return this;
-};
+//	return this;
+//};
 
 // Attach a bunch of functions for handling common AJAX events
 jQuery.each( [ "ajaxStart", "ajaxStop", "ajaxComplete", "ajaxError", "ajaxSuccess", "ajaxSend" ], function( i, type ){
@@ -9595,3 +9595,67 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 }
 
 })( window );
+
+// Limit scope pollution from any deprecated API
+(function() {
+
+    var matched, browser;
+
+// Use of jQuery.browser is frowned upon.
+// More details: http://api.jquery.com/jQuery.browser
+// jQuery.uaMatch maintained for back-compat
+    jQuery.uaMatch = function( ua ) {
+        ua = ua.toLowerCase();
+
+        var match = /(chrome)[ \/]([\w.]+)/.exec( ua ) ||
+            /(webkit)[ \/]([\w.]+)/.exec( ua ) ||
+            /(opera)(?:.*version|)[ \/]([\w.]+)/.exec( ua ) ||
+            /(msie) ([\w.]+)/.exec( ua ) ||
+            ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) ||
+            [];
+
+        return {
+            browser: match[ 1 ] || "",
+            version: match[ 2 ] || "0"
+        };
+    };
+
+    matched = jQuery.uaMatch( navigator.userAgent );
+    browser = {};
+
+    if ( matched.browser ) {
+        browser[ matched.browser ] = true;
+        browser.version = matched.version;
+    }
+
+// Chrome is Webkit, but Webkit is also Safari.
+    if ( browser.chrome ) {
+        browser.webkit = true;
+    } else if ( browser.webkit ) {
+        browser.safari = true;
+    }
+
+    jQuery.browser = browser;
+
+    jQuery.sub = function() {
+        function jQuerySub( selector, context ) {
+            return new jQuerySub.fn.init( selector, context );
+        }
+        jQuery.extend( true, jQuerySub, this );
+        jQuerySub.superclass = this;
+        jQuerySub.fn = jQuerySub.prototype = this();
+        jQuerySub.fn.constructor = jQuerySub;
+        jQuerySub.sub = this.sub;
+        jQuerySub.fn.init = function init( selector, context ) {
+            if ( context && context instanceof jQuery && !(context instanceof jQuerySub) ) {
+                context = jQuerySub( context );
+            }
+
+            return jQuery.fn.init.call( this, selector, context, rootjQuerySub );
+        };
+        jQuerySub.fn.init.prototype = jQuerySub.fn;
+        var rootjQuerySub = jQuerySub(document);
+        return jQuerySub;
+    };
+
+})();
