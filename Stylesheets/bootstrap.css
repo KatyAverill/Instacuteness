@@ -10,6 +10,10 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+ .sidebar-nav-fixed {
+     position:fixed;
+ }
+
 .clearfix {
   *zoom: 1;
 }
@@ -625,6 +629,7 @@ a:focus {
 .container {
   margin-right: auto;
   margin-left: auto;
+  padding-top: 100px;
   *zoom: 1;
 }
 
@@ -659,6 +664,8 @@ a:focus {
 p {
   margin: 0 0 10px;
   display: block;
+  padding-top: 30px;
+  padding-bottom: 30px;
   text-align: center;
 }
 
@@ -4007,6 +4014,8 @@ input[type="submit"].btn.btn-mini {
 .nav-list .nav-header {
   margin-right: -15px;
   margin-left: -15px;
+  padding-top: 10px;
+  padding-bottom: 15px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
@@ -6136,7 +6145,7 @@ a.badge:focus {
 }
 
 .hero-unit {
-  padding: 60px;
+  padding: 20px;
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: 200;
