@@ -795,10 +795,10 @@ a.ui-link-inherit {
 }
 /* plus minus */
 .ui-icon-plus {
-	background-position: 	absolute;
+	background-position: 	-1px -1px;
 }
 .ui-icon-minus {
-	background-position: 	absolute;
+	background-position: 	-37px -1px;
 }
 /* delete/close */
 .ui-icon-delete {
@@ -806,7 +806,7 @@ a.ui-link-inherit {
 }
 /* arrows */
 .ui-icon-arrow-r {
-	background-position: 	absolute;
+	background-position: 	-108px -1px;
 }
 .ui-icon-arrow-l {
 	background-position: 	-144px -1px;

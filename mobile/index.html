@@ -17,6 +17,7 @@
 
 <div data-role="page" id="index">
 
+    <!--This script deletes white space from the search as it is entered-->
     <script type="text/javascript">
             $(function(){
                 $('#nospace').bind('keyup', function(){
@@ -25,6 +26,8 @@
                 });
             });
         </script> 
+
+        <!--The below scripts change the page based on the selected photo subject or search-->
         <script type="text/javascript">
             function getUrlVars() {
                 var vars = {};
@@ -47,11 +50,12 @@
                 window.location(initial+url);
             }
         </script>
+
+        <!--This script is for Instafeed-->
         <script type="text/javascript">
             $(document).one('pageshow', '#index', function() {
                 var urlParams = getUrlVars();
                 var tag = typeof urlParams["id"] === 'undefined' ? 'pets' : urlParams["id"];
-                //console.log(tag);
                 var feed = new Instafeed({
                     get: 'tagged',
                     tagName: tag,

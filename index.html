@@ -18,6 +18,8 @@
         <script type="text/javascript">stLight.options({publisher: "89f7b970-79bd-4593-9cc8-3891638aa0d0", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
         <link href="Stylesheets/bootstrap.css" rel="stylesheet">
 
+          <!--This script deletes white space from the search as it is entered-->
+
             <script type="text/javascript">
               $(function(){
                 $('#nospace').bind('keyup', function(){
@@ -27,6 +29,8 @@
               });
             </script>
 
+            <!--The below scripts change the page based on the selected photo subject or search-->
+
             <script type="text/javascript">
             function getUrlVars() {
             var vars = {};
@@ -35,8 +39,6 @@
             });
             return vars;
                 }
-            </script>
-            <script type="text/javascript">
              
              if (typeof getUrlVars()["id"] === 'undefined'){
               first = "pets"
@@ -46,15 +48,7 @@
 
             </script>
 
-              <script type="javascript">
-                function goToPage(var url = '')
-                {
-                    var initial = "http://www.domain.com";
-                    var extension = "html";
-
-                    window.location(initial+url+extension);
-                }
-                </script>
+            <!--This script is for Instafeed-->
             <script type="text/javascript">
                 var feed = new Instafeed({
                     get: 'tagged',
@@ -93,7 +87,6 @@
       </div>
     </div>
 
-<br><br><br><br><br>
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
